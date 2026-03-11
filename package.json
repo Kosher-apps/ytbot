@@ -1,10 +1,11 @@
 {
   "name": "ytbot",
   "version": "1.0.0",
-  "description": "",
+  "description": "WhatsApp bot that extracts direct YouTube audio links via yt-dlp",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "check": "node --check index.js && node --check src/bot.js && node --check src/handlers/messages.js && node --check src/services/ytdlp.js && node --check src/utils/url.js && node --check src/utils/message.js && node --check src/config/index.js"
   },
   "keywords": [],
   "author": "",
