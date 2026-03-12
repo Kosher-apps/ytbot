@@ -9,7 +9,6 @@ WhatsApp bot (Baileys) that detects YouTube links and returns a direct audio URL
 - YouTube link detection (`youtube.com` + `youtu.be`).
 - Direct audio link extraction via `yt-dlp -g -f bestaudio`.
 - Modular codebase for easier maintenance and extension.
-- Link previews are intentionally disabled in bot replies for better stability across environments.
 
 ## Architecture
 
@@ -50,17 +49,7 @@ Example:
 ```bash
 export BLACKLIST="972501234567,972540000000"
 export LOG_LEVEL="silent"
-export AUTH_FOLDER="auth_info"
 ```
-
-### Quick answer (Hebrew)
-
-- **איך מגדירים מספרים חסומים?**
-  - מגדירים משתנה סביבה `BLACKLIST` עם רשימת מספרים מופרדת בפסיקים.
-  - דוגמה: `export BLACKLIST="972501234567,972540000000"`
-- **איך מגדירים רמת לוגים?**
-  - מגדירים `LOG_LEVEL` (למשל: `silent`, `error`, `warn`, `info`, `debug`, `trace`).
-  - דוגמה: `export LOG_LEVEL="warn"`
 
 ## Run
 
@@ -79,7 +68,6 @@ npm run check
 ## Operational Notes
 
 - This bot currently handles text and extended-text message types.
-- Reply messages are sent with `linkPreview: null`, preventing `link-preview-js` runtime issues on environments where that optional package is missing.
 - If `yt-dlp` is missing, extraction will fail and the user receives an error message.
 - Auth files are written under `AUTH_FOLDER`; do not commit these credentials.
 
